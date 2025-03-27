@@ -1,0 +1,21 @@
+# Node.js dependencies
+node_modules/
+
+# Eleventy output
+_site/
+
+# Optional: VS Code settings
+.vscode/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# macOS system files
+.DS_Store
+
+# Environment files (if any)
+.env
+
+

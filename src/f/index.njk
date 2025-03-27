@@ -1,0 +1,28 @@
+---
+layout: layout.njk
+title: Letter F
+pagination:
+  data: f
+  size: 1000
+  alias: entries
+---
+
+{% for entry in entries %}
+<div class="restaurant-entry">
+  <div class="restaurant-columns">
+    <div class="restaurant-column-left">
+      <h2>{{ entry.name }}</h2>
+      <p>
+        <strong>Cuisine</strong>: {{ entry.cuisine }}<br />
+        <strong>Address</strong>: {{ entry.address }}<br />
+        <strong>Why Try It</strong>: {{ entry.why }}
+      </p>
+    </div>
+    <div class="restaurant-column-right">
+      <figure>
+        <img src="{{ entry.image }}" alt="{{ entry.name }} Exterior" />
+      </figure>
+    </div>
+  </div>
+</div>
+{% endfor %}

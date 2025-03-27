@@ -1,0 +1,16 @@
+[
+  {
+    "name": "F1 Smokehouse",
+    "cuisine": "Barbecue",
+    "address": "5121 Pershing Ave, Fort Worth, TX 76107",
+    "why": "Upscale BBQ with smoked prime rib and truffle potato salad in a rustic setting.",
+    "image": "/images/placeholder.png"
+  },
+  {
+    "name": "Fred's Texas Cafe",
+    "cuisine": "American, Burgers",
+    "address": "7101 Camp Bowie West Blvd, Fort Worth, TX 76116",
+    "why": "A Fort Worth icon since 1978\u2014huge burgers and chicken-fried steak in a laid-back vibe.",
+    "image": "/images/FredsTexasCafe.png"
+  }
+]

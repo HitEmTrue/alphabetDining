@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title or "Alphabet Dining DFW" }}</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      min-height: 100vh;
+    }
+    nav {
+      background-color: #333;
+      color: white;
+      width: 200px;
+      padding: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin: 10px 0;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+    }
+    main {
+      flex-grow: 1;
+      padding: 20px;
+    }
+    .restaurant-entry {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f9f9f9;
+    }
+    .restaurant-entry img {
+      max-width: 100%;
+      height: auto;
+    }
+    .restaurant-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    }
+    .restaurant-column-left {
+      flex: 2;
+      min-width: 200px;
+    }
+    .restaurant-column-right {
+      flex: 1;
+      min-width: 150px;
+    }
+    .restaurant-column-right img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <strong>Letters</strong>
+    <a href="/">Home</a>
+    <a href="/f/">F</a>
+    <a href="/l/">L</a>
+  </nav>
+  <div style="flex-grow:1">
+    <header>
+      <h1>{{ title or "Alphabet Dining DFW" }}</h1>
+    </header>
+    <main>
+      {{ content | safe }}
+    </main>
+  </div>
+</body>
+</html>
