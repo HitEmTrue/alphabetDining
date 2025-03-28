@@ -7,22 +7,91 @@ pagination:
   alias: entries
 ---
 
-{% for entry in entries %}
-<div class="restaurant-entry">
-  <div class="restaurant-columns">
-    <div class="restaurant-column-left">
-      <h2>{{ entry.name }}</h2>
-      <p>
-        <strong>Cuisine</strong>: {{ entry.cuisine }}<br />
-        <strong>Address</strong>: {{ entry.address }}<br />
-        <strong>Why Try It</strong>: {{ entry.why }}
-      </p>
-    </div>
-    <div class="restaurant-column-right">
-      <figure>
-        <img src="{{ entry.image }}" alt="{{ entry.name }} Exterior" />
-      </figure>
+<div class="entries-page-wrapper" id="restaurant-list">
+  {% for entry in entries %}
+  <div class="restaurant-entry" data-index="{{ loop.index0 }}">
+    <div class="restaurant-columns">
+      <div class="restaurant-column-left">
+        <h2>{{ entry.name }}</h2>
+        <p>
+          <strong>Cuisine</strong>: {{ entry.cuisine }}<br />
+          <strong>Address</strong>: {{ entry.address }}<br />
+          <strong>Why Try It</strong>: {{ entry.why }}<br />
+          {% if entry.website %}
+          <strong>Website</strong>: <a href="{{ entry.website }}" target="_blank" rel="noopener">{{ entry.website }}</a>
+          {% endif %}
+        </p>
+      </div>
+      <div class="restaurant-column-right">
+        <figure>
+          <img src="{{ entry.image }}" alt="{{ entry.name }} Exterior" />
+        </figure>
+      </div>
     </div>
   </div>
+  {% endfor %}
 </div>
-{% endfor %}
+
+
+<!-- Detail view container -->
+<div id="restaurant-detail" class="restaurant-entry" style="display:none"></div>
+
+<script>
+  const entries = {{ entries | dump | safe }};
+
+  document.querySelectorAll(".restaurant-entry").forEach(entry => {
+    entry.addEventListener("click", () => {
+      const index = entry.getAttribute("data-index");
+      const data = entries[index];
+      const detail = document.getElementById("restaurant-detail");
+      const list = document.getElementById("restaurant-list");
+
+      detail.innerHTML = `
+        <button onclick="goBack()">&larr; Back to list</button>
+        <h2>${data.name}</h2>
+        <p><strong>Cuisine</strong>: ${data.cuisine}</p>
+        <p><strong>Address</strong>: ${data.address}</p>
+        <p><strong>Why Try It</strong>: ${data.why}</p>
+        {% if entry.website %}
+          <strong>Website</strong>: <a href="{{ entry.website }}" target="_blank" rel="noopener">{{ entry.website }}</a>
+          {% endif %}
+        <p>${data.description}</p>
+        <figure>
+          <img src="${data.image}" alt="${data.name} Exterior" />
+        </figure>
+        `;
+
+      if (data.reviews && data.reviews.length > 0) {
+        const reviewLinks = data.reviews.map( review => 
+          `<li><a href="${review.url}" target="_blank">${review.summary}</a></li>`
+        ).join("");
+
+        detail.innerHTML += `
+          <h3>External Reviews</h3>
+          <ul>${reviewLinks}</ul>
+          `;
+      }
+
+      detail.innerHTML += `
+        <div style="margin-top:20px;">
+          <iframe
+            width="100%"
+            height="300"
+            frameborder="0"
+            style="border:0"
+            src="https://www.google.com/maps?q=${data.map.lat},${data.map.lng}&hl=es;z=14&output=embed"
+            allowfullscreen>
+          </iframe>
+        </div>
+      `;
+
+      list.style.display = "none";
+      detail.style.display = "block";
+    });
+  });
+
+  function goBack() {
+    document.getElementById("restaurant-detail").style.display = "none";
+    document.getElementById("restaurant-list").style.display = "block";
+  }
+</script>

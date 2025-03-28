@@ -4,13 +4,82 @@
     "cuisine": "Barbecue",
     "address": "5121 Pershing Ave, Fort Worth, TX 76107",
     "why": "Upscale BBQ with smoked prime rib and truffle potato salad in a rustic setting.",
-    "image": "/images/placeholder.png"
+    "image": "/images/F1Smokehouse.jpg",
+    "description": "F1 Smokehouse is a polished spot bringing a modern twist to traditional Texas barbecue. Known for their slow-smoked meats and sides with a gourmet flair.",
+    "website": "",
+    "map": {
+      "lat": 32.7303,
+      "lng": -97.4045
+    },
+    "reviews": [
+      {
+        "url": "https://www.fwweekly.com/2023/10/11/bad-to-the-bone/",
+        "summary": "A rave review from Fort Worth Weekly, highlighting the smoky depth of F1's prime rib."
+      }
+    ]
   },
   {
     "name": "Fred's Texas Cafe",
     "cuisine": "American, Burgers",
     "address": "7101 Camp Bowie West Blvd, Fort Worth, TX 76116",
-    "why": "A Fort Worth icon since 1978\u2014huge burgers and chicken-fried steak in a laid-back vibe.",
-    "image": "/images/FredsTexasCafe.png"
+    "why": "A Fort Worth icon since 1978—huge burgers and chicken-fried steak in a laid-back vibe.",
+    "image": "/images/fredstexascafe.jpg",
+    "description": "Fred's is beloved for its down-home atmosphere, cold beer, and killer burgers. A must-visit for both locals and tourists looking for authentic Texas grub.",
+    "website": "https://www.fredstexascafe.com/",
+    "map": {
+      "lat": 32.7209,
+      "lng": -97.4362
+    },
+    "reviews": [
+      {
+        "url": "https://www.foodnetwork.com/restaurants/tx/fort-worth/freds-texas-cafe-restaurant",
+        "summary": "Featured on Food Network for its legendary burgers and laid-back Texas charm."
+      }
+    ]
+  },
+  {
+    "name": "Fixe Southern House",
+    "cuisine": "Southern",
+    "address": "5282 Marathon Ave, Fort Worth, TX 76109",
+    "why": "Southern comfort with biscuits and shrimp 'n' grits in a chic, modern space.",
+    "image": "/images/fixesouthernhouse.jpg",
+    "description": "Fixe delivers upscale Southern cooking in a refined setting, with highlights like buttermilk biscuits and fried chicken that put it on the foodie map.",
+    "website": "https://www.fixesouthernhouse.com/",
+    "map": {
+      "lat": 32.7146,
+      "lng": -97.4035
+    },
+    "reviews": [
+      {
+        "url": "https://fwtx.com/eat-drink/reviews/fixe-eyes-clearfork-restaurant/",
+        "summary": "FWTX praises Fixe for elevating Southern fare while preserving comfort and hospitality."
+      }
+    ]
+  },
+  {
+    "name": "Flying Fish",
+    "cuisine": "Seafood, Southern",
+    "address": "2913 Montgomery St, Fort Worth, TX 76107",
+    "why": "Casual Southern seafood chain serving catfish, shrimp, and po'boys with a fun, family vibe.",
+    "image": "/images/flyingfish.jpg",
+    "description": "Flying Fish reels in fans with its relaxed atmosphere and fried seafood baskets. Great for a quick, satisfying fish fix.",
+    "website": "https://www.flyingfishinthe.net/fort-worth/",
+    "map": {
+      "lat": 32.7481,
+      "lng": -97.3662
+    }
+  },
+  {
+    "name": "Fuego Burger",
+    "cuisine": "American, Burgers",
+    "address": "4400 Benbrook Hwy, Fort Worth, TX 76116",
+    "why": "Hidden gem known for fiery flavor and Latin-inspired burgers in a humble setting.",
+    "image": "/images/fuegoburger.jpg",
+    "description": "This no-frills burger joint impresses with bold flavors and juicy patties. A local favorite for adventurous burger lovers.",
+    "website": "",
+    "map": {
+      "lat": 32.7103,
+      "lng": -97.4401
+    }
   }
 ]
